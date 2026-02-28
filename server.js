@@ -7,7 +7,7 @@ const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 require('dotenv').config({ path: './.env' });
-console.log("MONGO URL:", process.env.MONGODB_URL);
+
 
 // connection to DB and cloudinary
 const { connectDB } = require('./config/database');
