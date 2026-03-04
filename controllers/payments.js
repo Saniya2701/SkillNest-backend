@@ -13,23 +13,19 @@ const { default: mongoose } = require('mongoose');
 // ================= CAPTURE PAYMENT =================
 exports.capturePayment = async (req, res) => {
 
-    // 🔒 Razorpay not configured
-    if (!instance) {
-        return res.status(500).json({
-            success: false,
-            message: "Payment service not configured yet"
-        });
-    }
-
     const { coursesId } = req.body;
     const userId = req.user.id;
 
     if (!coursesId || coursesId.length === 0) {
-        return res.json({ success: false, message: "Please provide Course Id" });
+        return res.status(400).json({
+            success: false,
+            message: "Please provide Course Id"
+        });
     }
 
     let totalAmount = 0;
 
+    // 🔹 Calculate total amount first
     for (const course_id of coursesId) {
         try {
             const course = await Course.findById(course_id);
@@ -60,7 +56,7 @@ exports.capturePayment = async (req, res) => {
         }
     }
 
-    // ✅ Free course handling
+    // ================= FREE COURSE HANDLING =================
     if (totalAmount === 0) {
 
         for (const courseId of coursesId) {
@@ -95,7 +91,15 @@ exports.capturePayment = async (req, res) => {
         });
     }
 
-    // ✅ Create Razorpay order
+    // ================= RAZORPAY CHECK (ONLY FOR PAID COURSES) =================
+    if (!instance) {
+        return res.status(500).json({
+            success: false,
+            message: "Payment service not configured yet"
+        });
+    }
+
+    // ================= CREATE RAZORPAY ORDER =================
     try {
 
         const options = {
