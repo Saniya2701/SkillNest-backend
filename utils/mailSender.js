@@ -1,4 +1,4 @@
-const sgMail = require('@sendgrid/mail');
+const sgMail = require("@sendgrid/mail");
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -6,7 +6,10 @@ const mailSender = async (email, title, body) => {
   try {
     const msg = {
       to: email,
-      from: process.env.MAIL_USER,
+      from: {
+        email: process.env.MAIL_USER,
+        name: "SkillNest",
+      },
       subject: title,
       html: body,
     };
@@ -14,6 +17,7 @@ const mailSender = async (email, title, body) => {
     const response = await sgMail.send(msg);
     console.log("Email sent successfully");
     return response;
+
   } catch (error) {
     console.log("SendGrid Error:", error.response?.body || error);
     throw error;
