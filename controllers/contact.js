@@ -1,44 +1,45 @@
-const nodemailer = require("nodemailer");
+const mailSender = require("../utils/mailSender");
 
 exports.contactUs = async (req, res) => {
   try {
     const { firstname, lastname, email, message, phoneNo, countrycode } = req.body;
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
-      },
-    });
+    // validation
+    if (!firstname || !email || !message) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
 
-    // Mail options
-    const mailOptions = {
-      from: email,
-      to: process.env.MAIL_USER, // You receive message here
-      subject: `New Contact Message from ${firstname} ${lastname}`,
-      html: `
-        <h3>New Message from SkillNest Contact Form</h3>
-        <p><strong>Name:</strong> ${firstname} ${lastname}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${countrycode} ${phoneNo}</p>
-        <p><strong>Message:</strong> ${message}</p>
-      `,
-    };
+    // Email content
+    const emailBody = `
+      <h2>New Contact Message from SkillNest</h2>
+      <p><strong>Name:</strong> ${firstname} ${lastname}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${countrycode} ${phoneNo}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `;
 
-    await transporter.sendMail(mailOptions);
+    // send email using SendGrid
+    await mailSender(
+      process.env.MAIL_USER,
+      `New Contact Message from ${firstname}`,
+      emailBody
+    );
 
     return res.status(200).json({
       success: true,
-      message: "Email sent successfully",
+      message: "Message Sent Successfully",
     });
 
   } catch (error) {
     console.log("Contact Error:", error);
+
     return res.status(500).json({
       success: false,
-      message: "Something went wrong",
+      message: "Failed to send message",
     });
   }
 };
