@@ -6,21 +6,30 @@ const ratingAndReviewSchema = new mongoose.Schema({
         ref: 'User',
         required: true,
     },
+
+    // ⭐ FIXED HERE
     rating: {
-        type: String,
-        reqired: true
+        type: Number,
+        required: true,
+        min: 1,
+        max: 5
     },
+
     review: {
         type: String,
         required: true
     },
+
     course: {
-		type: mongoose.Schema.Types.ObjectId,
-		required: true,
-		ref: "Course",
-		index: true,
-	},
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Course",
+        required: true,
+        index: true,
+    },
 
-});
+},
+{
+    timestamps: true
+})
 
-module.exports = mongoose.model('RatingAndReview', ratingAndReviewSchema);
+module.exports = mongoose.model("RatingAndReview", ratingAndReviewSchema)
