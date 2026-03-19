@@ -1,139 +1,132 @@
 🚀 SkillNest Backend
+<p align="center"> <b>Scalable Backend for an EdTech Platform 🚀</b><br/> Built with Node.js, Express & MongoDB </p>
+🌐 Live API
 
-💡 A scalable and secure backend powering the SkillNest EdTech Platform — enabling authentication, course management, payments, and seamless learning experiences.
+🔗 https://skillnest-backend-9mg4.onrender.com/api/v1
 
-🌐 Live API Base URL
-https://skillnest-backend-9mg4.onrender.com/api/v1
 📌 Table of Contents
-🔹 Overview
-🔹 Tech Stack
-🔹 Features
-🔹 Project Architecture
-🔹 API Endpoints
-🔹 Environment Variables
-🔹 Installation & Setup
-🔹 Future Improvements
-🔹 Author
+
 🧠 Overview
 
-The SkillNest Backend is built using Node.js & Express, designed to support a full-fledged EdTech platform with:
+⚙️ Tech Stack
 
-Secure Authentication (JWT + OTP)
+✨ Features
 
-Role-based Authorization (Student / Instructor / Admin)
+🏗️ Architecture
 
-Course & Category Management
+🔌 API Endpoints
 
-Review & Rating System
+🔐 Environment Variables
 
-Payment Integration Ready (Razorpay)
+⚡ Installation
 
-Cloud Media Storage
+🚀 Future Improvements
+
+👨‍💻 Author
+
+🧠 Overview
+
+SkillNest Backend powers a full-featured EdTech platform with secure authentication, course management, and scalable APIs.
+
+✔ Built for real-world production
+✔ Clean architecture
+✔ Placement-ready project
 
 ⚙️ Tech Stack
-Technology	Usage
-🟢 Node.js	Backend Runtime
-🚀 Express.js	Server Framework
-🍃 MongoDB	Database
-🔐 JWT	Authentication
-🔑 bcrypt	Password Hashing
-📧 Nodemailer	Email & OTP
-☁️ Cloudinary	Media Storage
-💳 Razorpay	Payment Integration (Planned)
+<p> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge"/> <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge"/> </p>
 ✨ Features
-🔐 Authentication & Authorization
+🔐 Authentication
 
-User Signup with OTP Verification
+OTP-based Signup
 
-Secure Login using JWT
+JWT Login System
 
-Password Encryption using bcrypt
+Password Encryption (bcrypt)
 
-Role-based access control
+Role-based Authorization
 
 📚 Course Management
 
-Create, Update & Delete Courses
+Create / Update / Delete Courses
 
-Categorize Courses
+Category-wise filtering
 
 Instructor Dashboard Support
 
 ⭐ Reviews & Ratings
 
-Students can rate & review courses
+Add Course Reviews
 
-Dynamic average rating calculation
+Dynamic Rating Calculation
 
-🛒 Cart & Purchase System
+🛒 Cart System
 
-Add/Remove courses to cart
+Add to Cart
 
-Purchase flow ready
+Remove from Cart
 
-Payment integration (Razorpay - upcoming)
+Purchase-ready flow
 
-📩 OTP & Email System
+📩 Email & OTP
 
-Email verification via OTP
+OTP Email Verification
 
-Auto-expiry of OTP (Mongo TTL)
+Auto-expiry using MongoDB TTL
 
-Secure OTP validation (latest OTP only)
+Only latest OTP works
 
-☁️ Media Handling
+☁️ Media Upload
 
-Upload course thumbnails/videos using Cloudinary
+Cloudinary Integration
 
-🏗️ Project Architecture
+Image & Video Upload
+
+🏗️ Architecture
 SkillNest Backend
 │
-├── controllers/        # Business Logic
-├── models/             # Mongoose Schemas
-├── routes/             # API Routes
-├── middlewares/        # Auth & Validation
-├── utils/              # Helper Functions (mail, upload)
-├── config/             # DB & Cloud Config
-└── server.js           # Entry Point
+├── controllers/      # Business Logic
+├── models/           # Database Schemas
+├── routes/           # API Routes
+├── middlewares/      # Auth & Validation
+├── utils/            # Helpers (mail, upload)
+├── config/           # DB & Cloud Setup
+└── server.js         # Entry Point
 🔌 API Endpoints
-🔑 Auth Routes
-POST   /auth/sendOTP
-POST   /auth/signup
-POST   /auth/login
-POST   /auth/changePassword
-📚 Course Routes
-GET    /course/showAllCategories
-GET    /course/getCategoryPageDetails
-GET    /course/getReviews
-POST   /course/createCourse
-👤 Profile Routes
-GET    /profile/getUserDetails
-PUT    /profile/updateProfile
+🔑 Auth
+POST /auth/sendOTP
+POST /auth/signup
+POST /auth/login
+POST /auth/changePassword
+📚 Courses
+GET  /course/showAllCategories
+GET  /course/getCategoryPageDetails
+GET  /course/getReviews
+POST /course/createCourse
+👤 Profile
+GET /profile/getUserDetails
+PUT /profile/updateProfile
 🔐 Environment Variables
 
-Create a .env file in root:
+Create .env file:
 
 PORT=4000
-DATABASE_URL=your_mongodb_connection
-JWT_SECRET=your_secret_key
+DATABASE_URL=your_mongodb_url
+JWT_SECRET=your_secret
 
 MAIL_HOST=smtp.gmail.com
 MAIL_USER=your_email
 MAIL_PASS=your_password
 
-CLOUDINARY_NAME=your_cloud_name
+CLOUDINARY_NAME=your_name
 CLOUDINARY_API_KEY=your_key
 CLOUDINARY_API_SECRET=your_secret
 
 RAZORPAY_KEY=your_key
 RAZORPAY_SECRET=your_secret
-⚡ Installation & Setup
-📥 Clone Repository
+⚡ Installation
 git clone https://github.com/your-username/SkillNest-backend.git
 cd SkillNest-backend
-📦 Install Dependencies
 npm install
-▶️ Run Server
 npm run dev
 🚀 Future Improvements
 
@@ -141,15 +134,13 @@ npm run dev
 
 🎓 Course Completion Certificates
 
-📊 Instructor Analytics Dashboard
+📊 Instructor Analytics
 
 🔔 Notifications System
-
-🧾 Order History & Invoice System
 
 📱 Mobile Optimization APIs
 
 👨‍💻 Author
 
 Saniya Mane
-🎓 Computer Science Engineering Student
+🎓 CSE Student | 💼 Aspiring Developer
