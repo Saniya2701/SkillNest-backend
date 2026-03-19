@@ -148,6 +148,7 @@ CLOUDINARY_API_SECRET=your_secret
 RAZORPAY_KEY=your_key
 RAZORPAY_SECRET=your_secret
 
+'''
 
 ### ⚡ Installation
 git clone https://github.com/your-username/SkillNest-backend.git
