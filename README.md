@@ -1,9 +1,5 @@
 🚀 SkillNest Backend
-<p align="center"> <b>Scalable Backend for an EdTech Platform 🚀</b><br/> Built with Node.js, Express & MongoDB </p>
-🌐 Live API
-
-🔗 https://skillnest-backend-9mg4.onrender.com/api/v1
-
+<p align="center"> <b>Scalable Backend for an EdTech Platform</b><br/> Built with <b>Node.js, Express & MongoDB</b> </p> <p align="center"> <a href="https://skillnest-backend-9mg4.onrender.com/api/v1"> <img src="https://img.shields.io/badge/Live API-Click Here-blue?style=for-the-badge&logo=render"/> </a> </p>
 📌 Table of Contents
 
 🧠 Overview
@@ -28,18 +24,19 @@
 
 SkillNest Backend powers a full-featured EdTech platform with secure authentication, course management, and scalable APIs.
 
-✔ Built for real-world production
-✔ Clean architecture
-✔ Placement-ready project
+✔ Production-ready backend
+✔ Clean & modular architecture
+✔ Built for real-world applications
+✔ Perfect for placements & portfolio
 
 ⚙️ Tech Stack
-<p> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge"/> <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge"/> </p>
+<p align="center"> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge"/> <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge"/> </p>
 ✨ Features
 🔐 Authentication
 
 OTP-based Signup
 
-JWT Login System
+Secure JWT Login System
 
 Password Encryption (bcrypt)
 
@@ -51,7 +48,7 @@ Create / Update / Delete Courses
 
 Category-wise filtering
 
-Instructor Dashboard Support
+Instructor Dashboard support
 
 ⭐ Reviews & Ratings
 
@@ -71,9 +68,9 @@ Purchase-ready flow
 
 OTP Email Verification
 
-Auto-expiry using MongoDB TTL
+MongoDB TTL-based auto expiry
 
-Only latest OTP works
+Only latest OTP is valid
 
 ☁️ Media Upload
 
@@ -103,11 +100,11 @@ GET  /course/getCategoryPageDetails
 GET  /course/getReviews
 POST /course/createCourse
 👤 Profile
-GET /profile/getUserDetails
-PUT /profile/updateProfile
+GET  /profile/getUserDetails
+PUT  /profile/updateProfile
 🔐 Environment Variables
 
-Create .env file:
+Create a .env file in root:
 
 PORT=4000
 DATABASE_URL=your_mongodb_url
@@ -124,9 +121,16 @@ CLOUDINARY_API_SECRET=your_secret
 RAZORPAY_KEY=your_key
 RAZORPAY_SECRET=your_secret
 ⚡ Installation
+# Clone the repository
 git clone https://github.com/your-username/SkillNest-backend.git
+
+# Navigate to project folder
 cd SkillNest-backend
+
+# Install dependencies
 npm install
+
+# Run the server
 npm run dev
 🚀 Future Improvements
 
@@ -134,13 +138,14 @@ npm run dev
 
 🎓 Course Completion Certificates
 
-📊 Instructor Analytics
+📊 Instructor Analytics Dashboard
 
-🔔 Notifications System
+🔔 Notification System
 
 📱 Mobile Optimization APIs
 
 👨‍💻 Author
 
 Saniya Mane
-🎓 CSE Student | 💼 Aspiring Developer
+🎓 CSE Student
+💼 Aspiring Software Developer
