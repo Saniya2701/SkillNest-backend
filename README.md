@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://skill-nest-frontend-eight.vercel.app/">
-    <img src="https://img.shields.io/badge/Live API-Click Here-blue?style=for-the-badge&logo=render"/>
+    <img src="https://img.shields.io/badge/Live URL-Click Here-blue?style=for-the-badge&logo=render"/>
   </a>
 </p>
 
@@ -147,11 +147,16 @@ CLOUDINARY_API_SECRET=your_secret
 
 RAZORPAY_KEY=your_key
 RAZORPAY_SECRET=your_secret
-⚡ Installation
+
+
+### ⚡ Installation
 git clone https://github.com/your-username/SkillNest-backend.git
 cd SkillNest-backend
 npm install
 npm run dev
+
+---
+
 🚀 Future Improvements
 
 💳 Razorpay Payment Integration
