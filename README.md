@@ -14,15 +14,16 @@
 ---
 
 ## 📌 Table of Contents
-- [🧠 Overview](#-overview)
-- [⚙️ Tech Stack](#️-tech-stack)
-- [✨ Features](#-features)
-- [🏗️ Architecture](#️-architecture)
-- [🔌 API Endpoints](#-api-endpoints)
-- [🔐 Environment Variables](#-environment-variables)
-- [⚡ Installation](#-installation)
-- [🚀 Future Improvements](#-future-improvements)
-- [👨‍💻 Author](#-author)
+
+* [🧠 Overview](#-overview)
+* [⚙️ Tech Stack](#️-tech-stack)
+* [✨ Features](#-features)
+* [🏗️ Architecture](#️-architecture)
+* [🔌 API Endpoints](#-api-endpoints)
+* [🔐 Environment Variables](#-environment-variables)
+* [⚡ Installation](#-installation)
+* [🚀 Future Improvements](#-future-improvements)
+* [👨‍💻 Author](#-author)
 
 ---
 
@@ -30,14 +31,14 @@
 
 SkillNest Backend powers a full-featured **EdTech platform** with:
 
-- ✅ Secure authentication  
-- ✅ Course management system  
-- ✅ Scalable REST APIs  
+* ✅ Secure authentication
+* ✅ Course management system
+* ✅ Scalable REST APIs
 
-✔ Production-ready backend  
-✔ Clean & modular architecture  
-✔ Built for real-world applications  
-✔ Perfect for placements  
+✔ Production-ready backend
+✔ Clean & modular architecture
+✔ Built for real-world applications
+✔ Perfect for placements
 
 ---
 
@@ -56,75 +57,84 @@ SkillNest Backend powers a full-featured **EdTech platform** with:
 ## ✨ Features
 
 ### 🔐 Authentication
-- OTP-based Signup  
-- Secure JWT Login  
-- Password Encryption (bcrypt)  
-- Role-based Authorization  
+
+* OTP-based Signup
+* Secure JWT Login
+* Password Encryption (bcrypt)
+* Role-based Authorization
 
 ### 📚 Course Management
-- Create / Update / Delete Courses  
-- Category-wise filtering  
-- Instructor Dashboard support  
+
+* Create / Update / Delete Courses
+* Category-wise filtering
+* Instructor Dashboard support
 
 ### ⭐ Reviews & Ratings
-- Add Course Reviews  
-- Dynamic Rating Calculation  
+
+* Add Course Reviews
+* Dynamic Rating Calculation
 
 ### 🛒 Cart System
-- Add to Cart  
-- Remove from Cart  
-- Purchase-ready flow  
+
+* Add to Cart
+* Remove from Cart
+* Purchase-ready flow
 
 ### 📩 Email & OTP
-- OTP Email Verification  
-- MongoDB TTL auto expiry  
-- Only latest OTP works  
+
+* OTP Email Verification
+* MongoDB TTL auto expiry
+* Only latest OTP works
 
 ### ☁️ Media Upload
-- Cloudinary Integration  
-- Image & Video Upload  
+
+* Cloudinary Integration
+* Image & Video Upload
 
 ---
 
-```markdown
 ## 🏗️ Architecture
 
-
+```
 SkillNest Backend
 │
-├── controllers/ # Business Logic
-├── models/ # Database Schemas
-├── routes/ # API Routes
-├── middlewares/ # Auth & Validation
-├── utils/ # Helpers
-├── config/ # DB & Cloud Setup
-└── server.js # Entry Point
+├── controllers/      # Business Logic
+├── models/           # Database Schemas
+├── routes/           # API Routes
+├── middlewares/      # Auth & Validation
+├── utils/            # Helpers
+├── config/           # DB & Cloud Setup
+└── server.js         # Entry Point
+```
 
-
+---
 
 ## 🔌 API Endpoints
 
-## 🔑 Auth
+### 🔑 Auth
 
+```
 POST /auth/sendOTP
 POST /auth/signup
 POST /auth/login
 POST /auth/changePassword
+```
 
+### 📚 Courses
 
-## 📚 Courses
-
-GET /course/showAllCategories
-GET /course/getCategoryPageDetails
-GET /course/getReviews
+```
+GET  /course/showAllCategories
+GET  /course/getCategoryPageDetails
+GET  /course/getReviews
 POST /course/createCourse
+```
 
+### 👤 Profile
 
-## 👤 Profile
-
-GET /profile/getUserDetails
-PUT /profile/updateProfile
-
+```
+GET  /profile/getUserDetails
+PUT  /profile/updateProfile
+```
 
 ---
 
@@ -147,31 +157,37 @@ CLOUDINARY_API_SECRET=your_secret
 
 RAZORPAY_KEY=your_key
 RAZORPAY_SECRET=your_secret
+```
 
-'''
+---
 
-### ⚡ Installation
+## ⚡ Installation
+
+```bash
 git clone https://github.com/your-username/SkillNest-backend.git
 cd SkillNest-backend
 npm install
 npm run dev
+```
+
+---
+
+## 🚀 Future Improvements
+
+* 💳 Razorpay Payment Integration
+* 🎓 Course Certificates
+* 📊 Instructor Analytics
+* 🔔 Notification System
+* 📱 Mobile APIs
+
+---
+
+## 👨‍💻 Author
+
+**Saniya Mane**
+
+* 🎓 CSE Student
+* 💼 Aspiring Developer
 
 
 
-🚀 Future Improvements
-
-💳 Razorpay Payment Integration
-
-🎓 Course Certificates
-
-📊 Instructor Analytics
-
-🔔 Notification System
-
-📱 Mobile APIs
-
-👨‍💻 Author
-
-Saniya Mane
-🎓 CSE Student
-💼 Aspiring Developer
