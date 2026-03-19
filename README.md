@@ -102,13 +102,9 @@ SkillNest Backend
 
 
 
-
-
----
-
 ## 🔌 API Endpoints
 
-### 🔑 Auth
+## 🔑 Auth
 
 POST /auth/sendOTP
 POST /auth/signup
@@ -116,7 +112,7 @@ POST /auth/login
 POST /auth/changePassword
 
 
-### 📚 Courses
+## 📚 Courses
 
 GET /course/showAllCategories
 GET /course/getCategoryPageDetails
@@ -124,7 +120,7 @@ GET /course/getReviews
 POST /course/createCourse
 
 
-### 👤 Profile
+## 👤 Profile
 
 GET /profile/getUserDetails
 PUT /profile/updateProfile
