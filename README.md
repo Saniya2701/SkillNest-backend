@@ -100,6 +100,7 @@ SkillNest Backend
 └── server.js # Entry Point
 
 
+
 ---
 
 ## 🔌 API Endpoints
