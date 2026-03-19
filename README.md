@@ -86,6 +86,7 @@ SkillNest Backend powers a full-featured **EdTech platform** with:
 
 ---
 
+```markdown
 ## 🏗️ Architecture
 
 
@@ -98,6 +99,8 @@ SkillNest Backend
 ├── utils/ # Helpers
 ├── config/ # DB & Cloud Setup
 └── server.js # Entry Point
+
+
 
 
 
@@ -157,7 +160,7 @@ cd SkillNest-backend
 npm install
 npm run dev
 
----
+
 
 🚀 Future Improvements
 
