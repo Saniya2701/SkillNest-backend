@@ -1,33 +1,34 @@
 
-const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST || "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-});
+const { Resend } = require("resend");
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const mailSender = async (email, title, body) => {
   try {
-    const mailOptions = {
-      from: `"SkillNest" <${process.env.MAIL_USER}>`,
+    if (!process.env.RESEND_API_KEY || !process.env.MAIL_FROM) {
+      throw new Error(
+        "RESEND_API_KEY or MAIL_FROM is missing"
+      );
+    }
+
+    const { data, error } = await resend.emails.send({
+      from: process.env.MAIL_FROM,
       to: email,
       subject: title,
       html: body,
-    };
+    });
 
-    const response = await transporter.sendMail(mailOptions);
+    if (error) {
+      throw new Error(error.message);
+    }
 
-    console.log("Email sent successfully to:", email);
+    console.log("Email accepted by Resend:", data?.id);
 
-    return response;
+    return data;
   } catch (error) {
-    console.error("Nodemailer Error:", error.message);
+    console.error("Email sending failed:", error.message);
     throw error;
   }
 };
