@@ -1,25 +1,33 @@
-const sgMail = require("@sendgrid/mail");
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const nodemailer = require("nodemailer");
+require("dotenv").config();
+
+const transporter = nodemailer.createTransport({
+  host: process.env.MAIL_HOST || "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
+  },
+});
 
 const mailSender = async (email, title, body) => {
   try {
-    const msg = {
+    const mailOptions = {
+      from: `"SkillNest" <${process.env.MAIL_USER}>`,
       to: email,
-      from: {
-        email: process.env.MAIL_USER,
-        name: "SkillNest",
-      },
       subject: title,
       html: body,
     };
 
-    const response = await sgMail.send(msg);
-    console.log("Email sent successfully");
-    return response;
+    const response = await transporter.sendMail(mailOptions);
 
+    console.log("Email sent successfully to:", email);
+
+    return response;
   } catch (error) {
-    console.log("SendGrid Error:", error.response?.body || error);
+    console.error("Nodemailer Error:", error.message);
     throw error;
   }
 };
